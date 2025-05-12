@@ -81,6 +81,9 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Required by colorizer
+vim.opt.termguicolors = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -802,11 +805,18 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rose-pine/neovim',
-    priority = 1000,
-    name = 'rose-pine',
+    -- SWITCHED TO USING PYWAL TO AUTOGEN COLOURS
+    -- 'rose-pine/neovim',
+    -- priority = 1000,
+    -- name = 'rose-pine',
+    -- config = function()
+    --   vim.cmd 'colorscheme rose-pine-moon'
+    -- end,
+    'uZer/pywal16.nvim',
+    -- for local dev replace with:
+    -- dir = '~/your/path/pywal16.nvim',
     config = function()
-      vim.cmd 'colorscheme rose-pine-moon'
+      vim.cmd.colorscheme 'pywal16'
     end,
   },
 
